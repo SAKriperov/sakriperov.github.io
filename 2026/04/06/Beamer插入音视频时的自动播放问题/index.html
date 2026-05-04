@@ -1,40 +1,22 @@
-
   <!DOCTYPE html>
   <html lang="en"  
-    
       data-theme-mode="auto"
-    
   >
   <head>
-  
   <meta charset="utf-8">
   
-
   
-
   
-
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_4k4bc36ef96';window.REIMU_CONFIG.clipboard_tips = {"success":{"en":"Copy successfully (*^▽^*)"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = 'All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://sakriperov.github.io';</script>
-  
   <title>
-    Beamer插入音视频时的自动播放问题 |
-    
-    八云设计局
+    Beamer插入音视频时的自动播放问题 | 八云设计局
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
-  
-  
     <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  
     
 <link rel="stylesheet" href="/css/loader.css">
 
-  
-  
     <meta name="description" content="Beamer使用media9宏包插入音视频时，我想让音视频在这一张frame的某一个slide自动播放，于是写代码如下： 12345678910111213141516\begin&#123;frame&#125;	\onslide&lt;1-2&gt;	This is the first line.		\onslide&lt;2&gt;	This is the second line with">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Beamer插入音视频时的自动播放问题">
@@ -46,62 +28,33 @@
 <meta property="article:modified_time" content="2026-04-06T14:32:12.749Z">
 <meta property="article:author" content="S.A.Kriperov">
 <meta name="twitter:card" content="summary">
-  
-  
     <link rel="alternate" href="/atom.xml" title="八云设计局" type="application/atom+xml">
-  
-  
     <link rel="shortcut icon" href="/images/favicon.ico">
-  
   
 <link rel="stylesheet" href="/css/style.css">
 
   <link rel="preload" as="style" onload="this.onload&#x3D;null;this.rel&#x3D;&#39;stylesheet&#39;" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL&#x2F;toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx&#x2F;1oA&#x2F;0l8ysE" crossorigin="anonymous">
-  
-    
-      
-        
-<link rel="stylesheet" href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l&#x2F;9On385z&#x2F;&#x2F;&#x2F;+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-
-      
-    
-  
-  
-  
-  
+      <link rel="preload" as="style" onload="this.onload&#x3D;null;this.rel&#x3D;&#39;stylesheet&#39;" href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css" integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz+YI" crossorigin="anonymous">
     
 <script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
 
-  
-  
     
 <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
 
-  
-  
-  
 <meta name="generator" content="Hexo 8.0.0"></head>
 
   <body>
-    
-    
-  <div id='loader'>
+      <div id='loader'>
     <div class="loading-left-bg loading-bg"></div>
     <div class="loading-right-bg loading-bg"></div>
     <div class="spinner-box">
       <div class="loading-taichi rotate">
-        
           <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
             <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
             <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
            M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
           </svg>
-        
       </div>
-      
-      
-        
-      
       <div class="loading-word">Loading...</div>
     </div>
   </div>
@@ -134,7 +87,6 @@
     window.addEventListener('DOMContentLoaded', endLoading);
     loaderEl.addEventListener('click', endLoading);
   </script>
-
 <div id="copy-tooltip"></div>
 <div id="heatmap-tooltip"></div>
 
@@ -143,106 +95,59 @@
       <div id="wrap">
         <div id="header-nav">
   <nav id="main-nav" aria-label="Primary navigation">
-    
-      
-        <span class="main-nav-link-wrap">
-          <div class="main-nav-icon icon rotate">
-             
-              &#xe62b;
-             
-          </div>
-          <a class="main-nav-link" href="/">Home</a>
+        <a class="main-nav-link-wrap" href="/">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">Home</span>
         </span>
-      
-        <span class="main-nav-link-wrap">
-          <div class="main-nav-icon icon rotate">
-             
-              &#xe62b;
-             
-          </div>
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <a class="main-nav-link-wrap" href="/archives">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">Archives</span>
         </span>
-      
-        <span class="main-nav-link-wrap">
-          <div class="main-nav-icon icon rotate">
-             
-              &#xe62b;
-             
-          </div>
-          <a class="main-nav-link" href="/about">About</a>
+        <a class="main-nav-link-wrap" href="/about">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">About</span>
         </span>
-      
-        <span class="main-nav-link-wrap">
-          <div class="main-nav-icon icon rotate">
-             
-              &#xe62b;
-             
-          </div>
-          <a class="main-nav-link" href="/friend">Friend</a>
+        <a class="main-nav-link-wrap" href="/friend">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">Friend</span>
         </span>
-      
-    
     <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation">
-    
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
-    
-    
   </nav>
-  
 </div>
 <header id="header" aria-label="Site header">
-  
-    
-      
         <picture>
-          
         </picture>
-        
           <img  fetchpriority="high" src="/images/banner.webp" alt="Beamer插入音视频时的自动播放问题">
-        
-      
-    
-  
   <div id="header-outer">
     <div id="header-title">
-      
-        
-        
           <span id="logo">
             <h1 data-aos="slide-up">Beamer插入音视频时的自动播放问题</h1>
           </span>
-        
-      
-      
-        
         <h2 id="subtitle-wrap" data-aos="slide-down">
-          
         </h2>
-      
     </div>
   </div>
 </header>
 
         <div id="content" aria-label="Page content"  class="sidebar-right" >
           <aside id="sidebar" aria-label="Sidebar">
-  
   <div class="sidebar-wrapper-container sticky">
-  
-    
-    
-  
- 
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="fade-up">
-      
-        
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-  
     
-  
 </div>
 </div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -253,7 +158,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">17</div>
+    <div class="sidebar-state-number">18</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
@@ -264,74 +169,51 @@
     <div class="sidebar-state-number">0</div>
   </div>
 </div>
-<div class="sidebar-social">
-  
+<div class="sidebar-social" >
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/sakriperov itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
 </div>
 <div class="sidebar-menu">
-  
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">Home</div>
       </div>
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">Archives</div>
       </div>
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">About</div>
       </div>
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">Friend</div>
       </div>
-    
-  
 </div>
 </div>
-        
-      
-      
-        
           <div class="sidebar-btn-wrapper" style="position:static">
             <div class="sidebar-toc-btn current"></div>
             <div class="sidebar-common-btn"></div>
           </div>
-        
-      
     </div>
   </div>
-  
   <div class="sidebar-widget">
-  
   </div>
-  
   </div>
-  
 </aside>
 
           <section id="main" aria-label="Main content"><article id="post-Beamer插入音视频时的自动播放问题" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
@@ -342,90 +224,45 @@
     <time datetime="2026-04-06T10:00:00.000Z" itemprop="datePublished">2026-04-06</time>
     <time style="display: none;" id="post-update-time">2026-04-06</time>
   </span>
-  
 </div>
-
-      
 
     </div>
     
     <div class="hr-line"></div>
     
-
     <div class="e-content article-entry" itemprop="articleBody">
-      
-      
         <p>Beamer使用<code>media9</code>宏包插入音视频时，我想让音视频在这一张frame的某一个slide自动播放，于是写代码如下：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">	<span class="keyword">\onslide</span>&lt;1-2&gt;</span><br><span class="line">	This is the first line.</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\onslide</span>&lt;2&gt;</span><br><span class="line">	This is the second line with audio.</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\onslide</span>&lt;2&gt;</span><br><span class="line">	<span class="keyword">\includemedia</span>[</span><br><span class="line">	addresource=audio.mp3,</span><br><span class="line">	activate=pageopen,</span><br><span class="line">	flashvars=&#123;</span><br><span class="line">		source=audio.mp3</span><br><span class="line">		<span class="built_in">&amp;</span>autoPlay=true&#125;,</span><br><span class="line">	transparent]&#123;&#125;&#123;APlayer.swf&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 <p>这样并不能实现预期的效果，正确写法如下：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">	<span class="keyword">\onslide</span>&lt;1-2&gt;</span><br><span class="line">	This is the first line.</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\onslide</span>&lt;2&gt;</span><br><span class="line">	This is the second line with audio.</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\alt</span>&lt;2&gt;&#123;</span><br><span class="line">		<span class="keyword">\includemedia</span>[</span><br><span class="line">		addresource=audio.mp3,</span><br><span class="line">		activate=pageopen,</span><br><span class="line">		flashvars=&#123;</span><br><span class="line">			source=audio.mp3</span><br><span class="line">			<span class="built_in">&amp;</span>autoPlay=true&#125;,</span><br><span class="line">		transparent]&#123;&#125;&#123;APlayer.swf&#125;</span><br><span class="line">	&#125;&#123;&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 <p>背后原因未知。</p>
 
-      
     </div>
     <footer class="article-footer">
       
       
-      
-      
-      
-      
-      
-      
-      
-
     </footer>
   </div>
-  
-  <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
-    
-      
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
       <div class="article-nav-link-wrap left">
-        
-          
-          
             <img data-src="/images/banner.webp" data-sizes="auto" alt="第七届空之航路宣发" class="lazyload">
-          
-        
         <a href="/2026/04/18/%E7%AC%AC%E4%B8%83%E5%B1%8A%E7%A9%BA%E4%B9%8B%E8%88%AA%E8%B7%AF%E5%AE%A3%E5%8F%91/" aria-label="Prev: 第七届空之航路宣发" title="Prev: 第七届空之航路宣发"></a>
         <div class="article-nav-caption">Prev</div>
         <h3 class="article-nav-title">
-          
             第七届空之航路宣发
-          
         </h3>
       </div>
-    
-    
-    
     <div class="article-nav-link-wrap right">
-      
-        
-        
           <img data-src="/images/banner.webp" data-sizes="auto" alt="tcolorbox制作可变宽度的盒子" class="lazyload">
-        
-      
       <a href="/2026/03/15/tcolorbox%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%8F%98%E5%AE%BD%E5%BA%A6%E7%9A%84%E7%9B%92%E5%AD%90/" aria-label="Next: tcolorbox制作可变宽度的盒子"  title="Next: tcolorbox制作可变宽度的盒子"></a>
       <div class="article-nav-caption">Next</div>
       <h3 class="article-nav-title">
-        
           tcolorbox制作可变宽度的盒子
-        
       </h3>
     </div>
-    
   </nav>
 
-
 </article>
-
-
-
-
-
-
-
-
 
 
 </section>
@@ -435,36 +272,23 @@
     <div class="footer-line"></div>
   </div>
   <div id="footer-info">
-    
     <div>
       <span class="icon-copyright"></span>
-      
-      
-      
         2020-2026
-      
-      <span class="footer-info-sep rotate"></span>
+        <span class="footer-info-sep rotate"></span>
       S.A.Kriperov
     </div>
-    
       <div>
         Powered by&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
         Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
       </div>
-    
-    
       <div>
         <span class="icon-brush"></span>
-        27.2k
+        28.4k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        01:52
+        01:57
       </div>
-    
-    
-    
-    
-    
       <div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
@@ -472,27 +296,20 @@
         <span class="icon-user"></span>
         <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
       </div>
-    
   </div>
 </footer>
 
-        
           <div class="sidebar-top">
             <div class="sidebar-top-taichi rotate"></div>
             <div class="arrow-up"></div>
           </div>
-        
         <div id="mask" class="hide"></div>
       </div>
       <nav id="mobile-nav" aria-label="Mobile navigation">
   <div class="sidebar-wrap">
-    
-      
         <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-  
     
-  
 </div>
 </div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -503,7 +320,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">17</div>
+    <div class="sidebar-state-number">18</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
@@ -514,72 +331,50 @@
     <div class="sidebar-state-number">0</div>
   </div>
 </div>
-<div class="sidebar-social">
-  
+<div class="sidebar-social" >
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/sakriperov itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
 </div>
 <div class="sidebar-menu">
-  
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">Home</div>
       </div>
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">Archives</div>
       </div>
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">About</div>
       </div>
-    
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-        <div class="sidebar-menu-icon icon rotate">
-          
-            &#xe62b;
-          
-        </div>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
         <div class="sidebar-menu-link">Friend</div>
       </div>
-    
-  
 </div>
 </div>
-      
-    
   </div>
-  
-    
       <div class="sidebar-btn-wrapper">
         <div class="sidebar-toc-btn current"></div>
         <div class="sidebar-common-btn"></div>
       </div>
-    
-  
 </nav>
 
     </div>
-    
-    
-    
     
 <script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
 
@@ -589,9 +384,7 @@
 
 
 
-
 <script src="/js/script.js"></script>
-
 
 
   
@@ -614,25 +407,20 @@
   </script>
 
 
-
 <script src="/js/pjax_script.js" data-pjax></script>
 
 
 
 
-
-
-
-  
-<script src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous"></script>
-
   <script>
-    window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
   </script>
-
-
-
-
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
 
 
 
@@ -641,7 +429,6 @@
 
 <div id="lazy-script">
   <div>
-    
       
       
       <script data-pjax>
@@ -657,17 +444,12 @@
           cover: "/images/banner.webp",
         };
       </script>
-       
-    
-    
-      
         
 <script src="/js/insert_highlight.js" data-pjax></script>
 
-        
       
-    
-    
+<script src="/js/tabs.js" data-pjax defer></script>
+
       <script type="module" data-pjax>
         const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
         const initPswp = (gallery, children) => {
@@ -691,18 +473,8 @@
           window.addEventListener('lightbox:ready', pswp);
         }
       </script>
-      
         
 
-
-
-
-
-
-
-
-      
-    
   </div>
 </div>
 
@@ -716,16 +488,13 @@
   \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
                                                   
 `,'color: #ff5252;')
-    console.log('%c Theme.Reimu v' + '1.10.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.11.2' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
   </script>
   
 
 
-
   
 <script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
-
-
 
 
 <script>
@@ -740,15 +509,6 @@
 
 
 
-  
 
-
-
-
-
-
-
-    
   </body>
   </html>
-
